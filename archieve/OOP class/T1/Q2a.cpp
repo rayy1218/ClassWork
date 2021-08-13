@@ -18,9 +18,6 @@ int main(void) {
     overtime_wage = overtime_worked_hours * OVERTIME_PAY_RATE;
     total_wage = regular_wage + overtime_wage;
 
-    //Specific precision point to 2
-    std::cout << std::fixed << std::showpoint;
-    std::cout << std::setprecision(2);
-
+    std::cout << std::fixed << std::setprecision(2);
     std::cout << "Wages for this week are RM" << total_wage << std::endl;
 }
