@@ -20,14 +20,13 @@ int main(void) {
         char input_char = '0';
         int quantity;
         std::cout << "Enter Flavour\t: ";
-        while (input_char != 'C' && input_char != 'V' && input_char != 'S') {
-            std::cin >> input_char;
+        std::cin >> input_char;
+        input_char = toupper(input_char);
 
+        while (input_char != 'C' && input_char != 'V' && input_char != 'S') {
+            std::cout << "Incorrect flavor. Re-enter Flavor: ";
+            std::cin >> input_char;
             input_char = toupper(input_char);
-            if (input_char != 'C' && input_char != 'V' && input_char != 'S') {
-                std::cout << "Incorrect flavor. Re-enter Flavor: ";
-                continue;
-            }
         }
 
         std::cout << "Enter quantity\t: ";

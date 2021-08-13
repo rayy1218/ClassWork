@@ -8,7 +8,7 @@ int main(void) {
     int work_hours = 0, regular_worked_hours = 0, overtime_worked_hours = 0;
     double regular_wage = 0, overtime_wage = 0, total_wage = 0;
 
-    std::cout << "Please enter total hours you've work ed this week: ";
+    std::cout << "Please enter total hours you've worked this week: ";
     std::cin >> work_hours;
 
     overtime_worked_hours = (work_hours > REGULAR_HOURS) ? (work_hours - REGULAR_HOURS) : 0;
