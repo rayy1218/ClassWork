@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-double getKineticEnergy(const double mass_kg, const double velocity_mps);
+void getKineticEnergy(double &kinetic_energy, const double &mass_kg, const double &velocity_mps);
 
 int main(void) {
     double mass_kg, velocity_mps, kinetic_energy;
@@ -12,12 +12,12 @@ int main(void) {
     std::cout << "Velocity in meters per second: ";
     std::cin >> velocity_mps;
 
-    //Return value
-    kinetic_energy = getKineticEnergy(mass_kg, velocity_mps);
+    getKineticEnergy(kinetic_energy, mass_kg, velocity_mps);
+
     std::cout << "\nThe kinetic energy of this object is " << kinetic_energy << " joules" << std::endl;
 }
 
-//By value and return value
-double getKineticEnergy(const double mass_kg, const double velocity_mps) {
-    return (mass_kg * pow(velocity_mps, 2)) / 2;
+//By reference
+void getKineticEnergy(double &kinetic_energy, const double &mass_kg, const double &velocity_mps) {
+    kinetic_energy = (mass_kg * pow(velocity_mps, 2)) / 2;
 }
