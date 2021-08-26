@@ -3,3 +3,5 @@
 /.idea
 CMakeLists.txt
 main.cpp
+*.zip
+*.pdf
