@@ -1,20 +1,20 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 
 class Purchase {
 private:
-    std::string name, code;
+    char name[20], code[30];
     int qty;
     float price, total;
 public:
-    void setData(std::string name, std::string code, int qty, float price);
+    void setData(const char name[], const char code[], int qty, float price);
     void calculate();
     void print();
 };
 
-void Purchase::setData(const std::string name, const std::string code, const int qty, const float price) {
-    this->name = name;
-    this->code = code;
+void Purchase::setData(const char name[], const char code[], const int qty, const float price) {
+    strcpy(this->name, name);
+    strcpy(this->code, code);
     this->qty = qty;
     this->price = price;
 }
@@ -36,40 +36,26 @@ void Purchase::print() {
 
 int main(void) {
     Purchase p;
+    {
+        char name[20], code[20];
+        int qty;
+        float price;
 
-    bool to_continue = true;
+        std::cout << "========================\n"
+                     "        WELCOME         \n"
+                     "========================\n";
+        std::cout << "Enter name : ";
+        std::cin >> name;
+        std::cout << "Product code : ";
+        std::cin >> code;
+        std::cout << "Enter quantity : ";
+        std::cin >> qty;
+        std::cout << "Enter price : RM ";
+        std::cin >> price;
 
-    do {
-
-        {
-            std::string name, code;
-            int qty;
-            float price;
-
-            std::cout << "========================\n"
-                         "        WELCOME         \n"
-                         "========================\n";
-            std::cout << "Enter name : ";
-            std::cin >> name;
-            std::cout << "Product code : ";
-            std::cin >> code;
-            std::cout << "Enter quantity : ";
-            std::cin >> qty;
-            std::cout << "Enter price : ";
-            std::cin >> price;
-
-            p.setData(name, code, qty, price);
-        }
-
-        p.calculate();
-        p.print();
-
-        char input;
-        std::cout << "You have another customer to purchase item? [Y/N]: ";
-        std::cin >> input;
-        std::cout << std::endl;
-
-        if (toupper(input) == 'N') {to_continue = false;}
+        p.setData(name, code, qty, price);
     }
-    while(to_continue);
+
+    p.calculate();
+    p.print();
 }
