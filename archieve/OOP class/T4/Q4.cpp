@@ -33,7 +33,7 @@ void Strawberry::dispStrawberrySelection() {
 
 void Strawberry::purchase() {
     int selection_int;
-    std::cout << "Enter your choice based on the number\n";
+    std::cout << "\nEnter your choice based on the number\n";
     std::cin >> selection_int;
 
     selection = "Not available";
@@ -67,7 +67,7 @@ void Customer::setData() {
     std::cout << "++++++++++++++++++++++++++++++++++\n"
               << "Tutti Frutti: Strawberry\n"
               << "++++++++++++++++++++++++++++++++++\n"
-              << "Enter name :";
+              << "Enter name: ";
     std::cin >> name;
     std::cout << std::endl;
     getOrder();
@@ -84,8 +84,8 @@ void Customer::dispDetail() {
     std::cout << "\n....................................\n"
               << name << ", Your purchase details\n"
               << "....................................\n"
-              << "Selection : " << straw_select << "\n"
-              << "Payment to be made : RM" << payment;
+              << "Selection\t\t: " << straw_select << "\n"
+              << "Payment to be made\t: RM" << payment;
 }
 
 int main(void) {

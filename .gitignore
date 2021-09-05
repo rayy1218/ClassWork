@@ -5,3 +5,4 @@ CMakeLists.txt
 main.cpp
 *.zip
 *.pdf
+*.docx

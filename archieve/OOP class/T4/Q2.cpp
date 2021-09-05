@@ -57,7 +57,7 @@ void Trivia::setStatus(double avg) {
 }
 
 void Trivia::displayResult() {
-    std::cout << "------------------------------\n"
+    std::cout << "\n------------------------------\n"
               << "RESULT SCORED\n"
               << "------------------------------\n"
               << "Name: " << name << "\n"
